@@ -24,13 +24,13 @@ public class DisplayInfo {
 	
 	public void show() {
 		JFrame f = new JFrame();
-		f.setTitle("¶·ÓãÖ±²¥Ô´»ñÈ¡");
+		f.setTitle("æ–—é±¼ç›´æ’­æºè·å–");
 		f.setDefaultCloseOperation(3);
 		f.setSize(340,120);
 		f.setLocationRelativeTo(null);
 		f.setResizable(false);
 		f.setLayout(new FlowLayout());
-		JLabel label1 = new JLabel("·¿¼äºÅ");
+		JLabel label1 = new JLabel("æˆ¿é—´å·");
 		entry = new JTextField(25);
 		entry.addKeyListener((KeyListener) new KeyAdapter() {
 			public void keyTyped(KeyEvent e) {
@@ -42,11 +42,11 @@ public class DisplayInfo {
 				}
 			}
 		});
-		JLabel label2 = new JLabel("Ö±²¥Ô´");
+		JLabel label2 = new JLabel("ç›´æ’­æº");
 		res = new JTextField(25);
 		res.setEditable(false);
 		
-		JButton getinfo = new JButton("»ñÈ¡");
+		JButton getinfo = new JButton("è·å–");
 		getinfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ee) {
 				String send = entry.getText();

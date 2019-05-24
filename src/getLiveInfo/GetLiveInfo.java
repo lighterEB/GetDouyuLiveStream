@@ -23,9 +23,9 @@ public class GetLiveInfo {
 			conn.setRequestProperty("Referer", "https://www.douyu.com/directory/myFollow");
 			conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36");
 			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-			conn.setRequestProperty("rid", "101");
-			conn.setRequestProperty("time", "1558613795754");
-			conn.setRequestProperty("auth", "b285cf1471ef0b61bd59fef16e53e906");
+			conn.setRequestProperty("rid", "这里改成抓包获取的数据和time，auth关联");
+			conn.setRequestProperty("time", "同上");
+			conn.setRequestProperty("auth", "同上");
 			conn.setUseCaches(false);
 			conn.setInstanceFollowRedirects(true);
 			conn.setDoOutput(true);
@@ -42,7 +42,7 @@ public class GetLiveInfo {
 			reader.close();
 			conn.disconnect();
 		}catch (Exception e) {
-			System.out.println("���� POST ��������쳣��" +e);
+			System.out.println("发送 POST 请求出现异常！" +e);
 			e.printStackTrace();
 		}
 		finally {
@@ -62,7 +62,7 @@ public class GetLiveInfo {
 		return res;
 	}
 	public static String main(String roomid){
-		String ret = GetLiveInfo.sendPost("http://playweb.douyucdn.cn/lapi/live/hlsH5Preview/"+roomid+"?rid="+roomid+"&did=3b29f458baf526cee57c2c4800081501", "");
+		String ret = GetLiveInfo.sendPost("http://playweb.douyucdn.cn/lapi/live/hlsH5Preview/"+roomid+"?rid="+roomid+"&did=", "");
 		try {
 			String[] strarray = ret.split(":")[8].split("_")[0].split("\"");
 			ret = "http://tx2play1.douyucdn.cn/"+strarray[1]+"_4000.xs";
